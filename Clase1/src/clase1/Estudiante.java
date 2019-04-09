@@ -13,7 +13,8 @@ public class Estudiante {
     private String nombre;
     private String apellido;
     private int edad;
-    final int cedula;
+    //final int cedula;
+    private int cedula;
 
     public Estudiante() {
         super();

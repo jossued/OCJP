@@ -18,7 +18,8 @@ public class Clase1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Estudiante est = new Estudiante();
+        
+        /*Estudiante est = new Estudiante();
         String nom, ape;
         int ed;
         
@@ -26,18 +27,24 @@ public class Clase1 {
         ape = JOptionPane.showInputDialog("Ingrese un apellido");
         ed = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la edad"));
         
-        /*
+        
         est.setNombre(nom);
         est.setApellido(ape);
         est.setEdad(ed);
-        */
         
-        Estudiante est2 = new Estudiante(nom, ape, ed);
+        
+        //Estudiante est2 = new Estudiante(nom, ape, ed, 0);
         
         JOptionPane.showConfirmDialog(null, est2.toString());
         //JOptionPane.showConfirmDialog(null, est.toString());
+        */
+        
+        Dias d = Dias.Lunes;
+        JOptionPane.showMessageDialog(null, d);
         
         
+        Equipo eq = Equipo.Barcelona;
+        JOptionPane.showMessageDialog(null, eq.getNombreClub());
         
     }
     
