@@ -39,12 +39,48 @@ public class Clase1 {
         //JOptionPane.showConfirmDialog(null, est.toString());
         */
         
+        /*
         Dias d = Dias.Lunes;
         JOptionPane.showMessageDialog(null, d);
         
         
         Equipo eq = Equipo.Barcelona;
         JOptionPane.showMessageDialog(null, eq.getNombreClub());
+        */
+        
+        /*
+        String placaAux, marcaAux, colorAux;
+        placaAux = JOptionPane.showInputDialog("Ingrese la placa");
+        marcaAux = JOptionPane.showInputDialog("Ingrese la marca");
+        colorAux = JOptionPane.showInputDialog("Ingrese el color");
+        
+        Auto autoAux = new Auto();
+        autoAux.setColor(colorAux);
+        autoAux.setMarca(marcaAux);
+        autoAux.setPlaca(placaAux);
+        
+        JOptionPane.showMessageDialog(null, autoAux.toString());
+        
+        String companiaAux, tipoAux;
+        companiaAux = JOptionPane.showInputDialog("Ingrese la compañia del taxi");
+        tipoAux = JOptionPane.showInputDialog("Ingrese el tipo de taxi");
+        
+        Taxi taxi = new Taxi(companiaAux, tipoAux, placaAux, colorAux, marcaAux);
+        
+        JOptionPane.showMessageDialog(null, taxi.toString());
+        */
+        
+        String marcaComp, modeloComp, marcaPantalla, resolucionPantalla;
+        
+        marcaComp = JOptionPane.showInputDialog("Ingrese la marca del computador");
+        modeloComp = JOptionPane.showInputDialog("Ingrese el modelo del computador");
+        marcaPantalla = JOptionPane.showInputDialog("Ingrese la marca de la pantalla");
+        resolucionPantalla = JOptionPane.showInputDialog("Ingrese la resolucion de la pantalla");
+        
+        Pantalla pan = new Pantalla(marcaPantalla, resolucionPantalla);
+        Computador computador = new Computador(marcaComp, modeloComp, pan);
+        
+        JOptionPane.showMessageDialog(null, computador.toString());
         
     }
     
