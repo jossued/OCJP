@@ -69,18 +69,15 @@ public class Clase1 {
         
         JOptionPane.showMessageDialog(null, taxi.toString());
         */
+
         
-        String marcaComp, modeloComp, marcaPantalla, resolucionPantalla;
-        
-        marcaComp = JOptionPane.showInputDialog("Ingrese la marca del computador");
-        modeloComp = JOptionPane.showInputDialog("Ingrese el modelo del computador");
-        marcaPantalla = JOptionPane.showInputDialog("Ingrese la marca de la pantalla");
-        resolucionPantalla = JOptionPane.showInputDialog("Ingrese la resolucion de la pantalla");
-        
-        Pantalla pan = new Pantalla(marcaPantalla, resolucionPantalla);
-        Computador computador = new Computador(marcaComp, modeloComp, pan);
-        
-        JOptionPane.showMessageDialog(null, computador.toString());
+        int x,y;
+		x = 3 & 5;
+		y = 3 | 5;
+		System.out.println(x + " " + y);
+
+
+
         
     }
     
