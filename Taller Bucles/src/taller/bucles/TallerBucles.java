@@ -20,7 +20,8 @@ public class TallerBucles {
         TallerBucles bucles = new TallerBucles();
         //bucles.sumarParesImparesTeclado();
         //bucles.solicitarPosNegParImpar();
-        bucles.compararDosNumeros();
+        //bucles.compararDosNumeros();
+        bucles.comprobarPrimoR();
     }
 
     private void sumarParesImparesTeclado() {
@@ -86,9 +87,39 @@ public class TallerBucles {
 
     private void comprobarPrimoR() {
         int n;
-        n = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número"));
+        boolean mas = false;
+        boolean esPrimo;
 
-        
+        do {
+            n = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número"));
+            esPrimo = esPrimo(n);
+            if (esPrimo) {
+                JOptionPane.showMessageDialog(null, "\nEl número " + n + " es primo");
+            } else {
+                JOptionPane.showMessageDialog(null, "\nEl número " + n + " no es primo");
+            }
+            int opc = JOptionPane.showConfirmDialog(null, "Quiere introducir otro número?");
+            System.out.println(opc);
+            if (opc == 0){
+                mas = true;
+            }
+        } while (mas == true);
+
+    }
+
+    public static Boolean esPrimo(int numero) {
+        Boolean esPrimoActual = true;
+        if (numero < 2) {
+            esPrimoActual = false;
+        } else {
+            for (int x = 2; x * x <= numero; x++) {
+                if (numero % x == 0) {
+                    esPrimoActual = false;
+                    break;
+                }
+            }
+        }
+        return esPrimoActual;
     }
 
 }
