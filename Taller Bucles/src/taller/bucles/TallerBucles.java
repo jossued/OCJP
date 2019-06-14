@@ -5,6 +5,8 @@
  */
 package taller.bucles;
 
+import static java.lang.Math.*;
+import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,7 +23,12 @@ public class TallerBucles {
         //bucles.sumarParesImparesTeclado();
         //bucles.solicitarPosNegParImpar();
         //bucles.compararDosNumeros();
-        bucles.comprobarPrimoR();
+        //bucles.comprobarPrimoR();
+        //bucles.calculadora();
+        //bucles.numDigitos();
+        //bucles.piramideNumeros();
+        //bucles.piramideAsteriscos();
+        bucles.paralelogrameAsteriscos();
     }
 
     private void sumarParesImparesTeclado() {
@@ -100,7 +107,7 @@ public class TallerBucles {
             }
             int opc = JOptionPane.showConfirmDialog(null, "Quiere introducir otro número?");
             System.out.println(opc);
-            if (opc == 0){
+            if (opc == 0) {
                 mas = true;
             }
         } while (mas == true);
@@ -122,4 +129,80 @@ public class TallerBucles {
         return esPrimoActual;
     }
 
+    public void calculadora() {
+        String Datos = JOptionPane.showInputDialog("Ingrese dos números separados por ,");
+        StringTokenizer tokens = new StringTokenizer(Datos, ",");
+        float a = Float.parseFloat(tokens.nextToken());
+        float b = Float.parseFloat(tokens.nextToken());
+
+        JOptionPane.showMessageDialog(null, "Suma= " + (a + b) + "\nResta= " + (a - b) + "\nMultiplicación= " + (a * b) + "\nDivisión= " + (a / b)
+                + "\nPotencia= " + pow(a, b) + "\nRaiz Cuadrada de " + a + "= " + sqrt(a) + "\nRaiz Cuadrada de " + b + "= " + sqrt(b)
+                + "\n" + b + "raiz de " + a + " =" + pow(a, 1 / b));
+
+    }
+
+    private void numDigitos() {
+        int a = 0, aux = 0;
+        do {
+            a = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese un número entre 0 y 999"
+                    + "\nIngrese 0 para salir"));
+            if (a / 10 >= 1) {
+                if (a / 100 >= 1) {
+                    if (a / 1000 >= 1) {
+
+                    } else {
+                        aux = 3;
+                    }
+                } else {
+                    aux = 2;
+                }
+            } else {
+                aux = 1;
+            }
+            JOptionPane.showMessageDialog(null, "El número " + a + " tiene " + aux + " cifras");
+
+        } while (a != 0);
+    }
+
+    private void piramideNumeros() {
+        int num = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese un número no negativo"));
+
+        String cadena = "";
+        for (int i = 1; i <= num; i++) {
+            for (int j = 1; j <= num - i + 1; j++) {
+                cadena += j;
+            }
+            cadena += "\n";
+        }
+        JOptionPane.showMessageDialog(null, cadena);
+    }
+
+    private void piramideAsteriscos() {
+        int num = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el alto del triangulo"));
+        String cadena = "";
+        for (int i = 0; i <= num; i++) {
+            for (int j = 0; j < i; j++) {
+                cadena = cadena + "*";
+            }
+            cadena = cadena + "\n";
+
+        }
+        JOptionPane.showMessageDialog(null, cadena);
+    }
+
+    private void paralelogrameAsteriscos() {
+        String Datos = JOptionPane.showInputDialog("Ingrese el alto y el ancho del paralelogramo separados por ,");
+        StringTokenizer tokens = new StringTokenizer(Datos, ",");
+        int a = Integer.parseInt(tokens.nextToken());
+        int b = Integer.parseInt(tokens.nextToken());
+        String cadena = "";
+
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < b; j++) {
+                cadena = cadena + "*";
+            }
+            cadena = cadena + "\n";
+        }
+        JOptionPane.showMessageDialog(null, cadena);
+    }
 }
